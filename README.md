@@ -1,4 +1,13 @@
-# Echo
+# AI Deployment Projects
+
+A portfolio of working prototypes with readable code, documented decisions, and explicit verification limits.
+
+| Project | Try it | Source and status |
+| --- | --- | --- |
+| **Dockflow** — inbound operations simulator | [Public live demo](https://dockflow-inbound-lab-olami-1110.boileditem.chatgpt.site) | [Code, setup and walkthrough](dockflow/README.md). Synthetic data; deterministic priorities and compatible door proposals; simulated operator approval, undo and exports. |
+| **Echo** — WhatsApp research interviewer | Local setup below | [Architecture and setup](#echo). Implemented prototype; live WhatsApp interview and transcription remain unverified. |
+
+## Echo
 
 [![Checks](https://github.com/olamitisoji/AI-Deployment-Projects/actions/workflows/checks.yml/badge.svg)](https://github.com/olamitisoji/AI-Deployment-Projects/actions/workflows/checks.yml)
 
@@ -6,7 +15,7 @@
 
 Research interviews need consistency without becoming rigid scripts. Echo lets a researcher define an objective, required information, and bounded follow-ups, then review the conversation and the evidence behind each decision. Participants answer through WhatsApp; researchers design and inspect studies in a separate dashboard.
 
-## Status
+### Status
 
 This is an implemented prototype with automated integration coverage and a verified cloud PostgreSQL connection. **A real WhatsApp interview has not been completed.** The API, worker, and dashboard currently run locally; hosted researcher authentication, live transcription, real-device delivery, and commercial eligibility remain unverified. No participant interviews are included.
 
@@ -20,7 +29,7 @@ Implemented:
 
 AI adapters call real services when configured. The quickstart below disables them; configuration errors are surfaced rather than replaced with generated demonstration answers. The extractive view does not claim that themes or population-level findings have been established.
 
-## Architecture
+### Architecture
 
 ```mermaid
 flowchart LR
@@ -43,7 +52,7 @@ The model supplies schema-validated analysis and evidence; application code cont
 
 **Stack:** Python, FastAPI, Pydantic, SQLAlchemy, PostgreSQL/Supabase, Next.js, TypeScript, React, Meta Cloud API, OpenAI, and FFmpeg-based audio normalization.
 
-## Local quickstart
+### Local quickstart
 
 Requires **Python 3.13+**, **Node.js 22.13+**, and a POSIX shell. Clone this repository and run from its root directory. No Supabase, Meta, or OpenAI account is required to inspect the dashboard, edit the seeded draft, or run the automated tests.
 
@@ -76,7 +85,7 @@ npm run dev -- --port 3002
 
 Open [the dashboard](http://127.0.0.1:3002) or [the local API explorer](http://127.0.0.1:8000/docs). The setup script generates private local credentials and connects the dashboard gateway without printing the token. It preserves existing settings. The seed creates an **unapproved healthcare-administration research draft**, not participant responses. The worker waits until WhatsApp is configured; invitation creation reports missing Meta configuration. Keep local credential access on loopback.
 
-## Verification
+### Verification
 
 From `backend`:
 
@@ -94,7 +103,7 @@ npm run build
 
 Latest local verification: **132 backend tests and 10 dashboard gateway tests passed**. TypeScript validation passed, and a production build passed from an isolated source copy without private environment settings (using the already-installed dependencies). The [first GitHub Actions run](https://github.com/olamitisoji/AI-Deployment-Projects/actions/runs/42875028190) also passed both jobs: backend installation/tests and dashboard installation/tests/build/typecheck. The [workflow](.github/workflows/checks.yml) runs on pushes and pull requests without provider secrets. The joined offline flow covers consent, audio/provider boundaries, follow-up decisions, replay suppression, controls, completion, export after restart, and withdrawal. Provider test doubles do not establish live WhatsApp or model quality. See the [verification record](docs/VERIFICATION.md) for the exact scope and remaining checks.
 
-## Read further
+### Read further
 
 - [Conversation engine and boundaries](docs/ENGINE.md)
 - [Research-quality evaluation](docs/EVALUATION.md)
