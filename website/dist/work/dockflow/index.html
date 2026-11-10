@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dockflow — Soji Agboola</title>
+  <meta name="description" content="How Soji Agboola built an independent inbound operations simulator with explicit assignment rules, human approval, and synthetic data.">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/script.js" defer></script>
+</head>
+<body class="case-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a class="brand" href="/" aria-label="Soji Agboola home">s<span>a</span><i aria-hidden="true">✳</i></a>
+      <a class="back-link" href="/#work">← All work</a>
+    </nav>
+  </header>
+  <main id="main" class="case-layout">
+    <header class="case-header">
+      <p class="eyebrow">Independent project · Public demo</p>
+      <h1 class="case-title">Dockflow</h1>
+      <p class="case-deck">Making the next dock assignment easier to understand.</p>
+      <dl class="case-meta">
+        <div><dt>My role</dt><dd>Product direction &amp; AI-assisted implementation</dd></div>
+        <div><dt>Focus</dt><dd>Operations decision support</dd></div>
+        <div><dt>Built with</dt><dd>React &amp; TypeScript</dd></div>
+      </dl>
+    </header>
+    <div class="case-columns">
+      <article class="case-body">
+        <section>
+          <h2>The operational question</h2>
+          <p>An urgent trailer cannot simply go to the next available door. Placement also depends on physical occupancy, handling requirements, destination compatibility, and how current the load information is. I wanted to make those constraints visible in the same place as the priority decision.</p>
+        </section>
+        <section>
+          <h2>My contribution</h2>
+          <p>I defined an independent demonstration of this workflow and used AI coding assistance to build and publish it while developing my technical skills. Dockflow combines a deadline-based queue, destination-demand heatmap, door plan, and exception list using fictional facility data.</p>
+          <p>A user selects a trailer, inspects the proposed door or its blocking reason, and approves a simulated assignment. They can choose another eligible door with an explanation, inspect decision history, and undo an action. Repeatable scenarios make different operating conditions easy to explore.</p>
+        </section>
+        <section>
+          <h2>The rules behind the recommendation</h2>
+          <p>Urgency determines the order of consideration. Every proposal must still satisfy occupancy, handling, destination, and freshness requirements. A held trailer continues to occupy its door. Missing profile data stays missing. Accepting a proposal checks the current state again, so an earlier recommendation cannot silently override a changed condition.</p>
+          <p>The application runs in the browser and preserves a visitor’s work locally. It demonstrates the decision process without requiring warehouse access or connecting to live dispatch systems.</p>
+        </section>
+        <section>
+          <h2>Evidence and next steps</h2>
+          <p>The verification record includes 24 behavioral tests, type checking, a production build, and browser checks of assignment, recovery, and persistence. These establish simulator behavior, not warehouse productivity gains. The next evaluation would test whether operators understand recommendations, recognize blocked loads, and recover from mistakes.</p>
+        </section>
+        <div class="case-actions">
+          <a class="button" href="https://dockflow-inbound-lab-olami-1110.boileditem.chatgpt.site">Try the live demo ↗</a>
+          <a class="button button-secondary" href="https://github.com/olamitisoji/AI-Deployment-Projects/tree/main/dockflow">Explore the code ↗</a>
+        </div>
+      </article>
+      <aside class="case-aside" aria-label="Project context">
+        <figure>
+          <img src="/assets/dockflow.jpg" alt="Dockflow’s synthetic inbound dashboard showing a trailer queue, destination demand, and door plan." loading="lazy">
+          <figcaption>The public simulator uses fictional trailers, facility data, and operating policies.</figcaption>
+        </figure>
+        <h2>Human judgment stays in the loop</h2>
+        <p>Recommend → inspect → approve → review. A recommendation does not move a trailer.</p>
+        <a class="text-link" href="https://github.com/olamitisoji/AI-Deployment-Projects/blob/main/dockflow/docs/VERIFICATION.md">Read the verification record ↗</a>
+      </aside>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><a href="/">Soji Agboola</a><a href="/#contact">Get in touch ↗</a><a href="https://github.com/olamitisoji/AI-Deployment-Projects">GitHub ↗</a></div></footer>
+</body>
+</html>

@@ -1,5 +1,7 @@
 # Product and deployment portfolio
 
+[**Explore the personal website →**](https://soji-agboola-portfolio.boileditem.chatgpt.site) · [Website source](../website/README.md)
+
 These projects explore how to turn an operational or research workflow into software with explicit rules, human controls, and testable behavior. I define the product direction and use AI coding assistance to implement and evaluate the prototypes while developing my technical skills.
 
 ## Start with Dockflow

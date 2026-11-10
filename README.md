@@ -1,5 +1,7 @@
 # AI Deployment Projects
 
+[**Visit my personal website →**](https://soji-agboola-portfolio.boileditem.chatgpt.site)
+
 A portfolio of working prototypes with readable code, documented decisions, and explicit verification limits.
 
 **For hiring managers:** [Start with the portfolio overview](portfolio/README.md), then read the [Dockflow case study](portfolio/dockflow.md) or [Echo case study](portfolio/echo.md). Each explains the problem, my contribution, key decisions, evidence, and remaining work.
@@ -7,6 +9,7 @@ A portfolio of working prototypes with readable code, documented decisions, and 
 | Project | Try it | Source and status |
 | --- | --- | --- |
 | **Dockflow** — inbound operations simulator | [Public live demo](https://dockflow-inbound-lab-olami-1110.boileditem.chatgpt.site) | [Code, setup and walkthrough](dockflow/README.md). Synthetic data; deterministic priorities and compatible door proposals; simulated operator approval, undo and exports. |
+| **Personal website** — product and deployment portfolio | [Public website](https://soji-agboola-portfolio.boileditem.chatgpt.site) | [Source and editing guide](website/README.md). Five case studies, career timeline, and project links. |
 | **Echo** — WhatsApp research interviewer | Local setup below | [Architecture and setup](#echo). Implemented prototype; live WhatsApp interview and transcription remain unverified. |
 
 ## Echo
