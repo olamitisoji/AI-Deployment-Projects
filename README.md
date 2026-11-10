@@ -2,6 +2,8 @@
 
 A portfolio of working prototypes with readable code, documented decisions, and explicit verification limits.
 
+**For hiring managers:** [Start with the portfolio overview](portfolio/README.md), then read the [Dockflow case study](portfolio/dockflow.md) or [Echo case study](portfolio/echo.md). Each explains the problem, my contribution, key decisions, evidence, and remaining work.
+
 | Project | Try it | Source and status |
 | --- | --- | --- |
 | **Dockflow** — inbound operations simulator | [Public live demo](https://dockflow-inbound-lab-olami-1110.boileditem.chatgpt.site) | [Code, setup and walkthrough](dockflow/README.md). Synthetic data; deterministic priorities and compatible door proposals; simulated operator approval, undo and exports. |
