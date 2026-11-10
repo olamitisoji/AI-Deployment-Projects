@@ -1,0 +1,53 @@
+# Local PostgreSQL deployment recipe. Docker/PostgreSQL were not available for execution here.
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: echo
+      POSTGRES_USER: echo
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Run scripts/configure_local.py first}
+    volumes:
+      - echo_database:/var/lib/postgresql/data
+    healthcheck:
+      test: [CMD-SHELL, "pg_isready -U echo -d echo"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+  init:
+    build: ./backend
+    env_file: ./backend/.env
+    environment: &backend_environment
+      DATABASE_URL: postgresql+psycopg://echo:${POSTGRES_PASSWORD}@db:5432/echo
+      OPENAI_KEY_FILE: /run/secrets/openai_env
+    secrets: [openai_env]
+    command: [python, -m, echo.manage, init-db]
+    depends_on:
+      db: {condition: service_healthy}
+  api:
+    build: ./backend
+    env_file: ./backend/.env
+    environment: *backend_environment
+    secrets: [openai_env]
+    ports: ["127.0.0.1:8000:8000"]
+    depends_on:
+      init: {condition: service_completed_successfully}
+  worker:
+    build: ./backend
+    env_file: ./backend/.env
+    environment: *backend_environment
+    secrets: [openai_env]
+    command: [python, -m, echo.worker]
+    depends_on:
+      init: {condition: service_completed_successfully}
+  dashboard:
+    build: ./dashboard
+    env_file: ./dashboard/.env.local
+    environment:
+      ECHO_API_URL: http://api:8000
+    ports: ["127.0.0.1:3002:3000"]
+    depends_on: [api]
+secrets:
+  openai_env:
+    file: ${OPENAI_ENV_FILE:?Run scripts/configure_local.py first}
+volumes:
+  echo_database:

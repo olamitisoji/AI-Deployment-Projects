@@ -1,0 +1,24 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.db*
+.local/
+node_modules/
+.next/
+*.tsbuildinfo
+.DS_Store
+# Local account/deployment inventory; public documentation uses placeholders.
+supabase/deployment.json
+# Participant recordings and exports never belong in source control.
+*.wav
+*.ogg
+*.opus
+*.mp3
+*.m4a
+*.webm
+exports/
+recordings/

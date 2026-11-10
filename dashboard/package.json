@@ -1,0 +1,7 @@
+{
+  "name": "echo-whatsapp-dashboard", "version": "0.1.0", "private": true, "type": "module",
+  "engines": { "node": ">=22.13.0" },
+  "scripts": { "dev": "next dev --hostname 127.0.0.1", "build": "next build", "start": "next start --hostname 127.0.0.1", "typecheck": "tsc --noEmit", "test": "node --experimental-strip-types --test tests/*.test.mjs" },
+  "dependencies": { "next": "16.3.4", "react": "19.2.6", "react-dom": "19.2.6", "@supabase/supabase-js": "2.108.0", "qrcode": "1.5.4", "lucide-react": "1.31.0" },
+  "devDependencies": { "typescript": "5.9.3", "@types/node": "22.19.19", "@types/react": "19.2.14", "@types/react-dom": "19.2.3", "@types/qrcode": "1.5.6" }
+}
