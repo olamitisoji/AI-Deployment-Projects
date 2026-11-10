@@ -1,5 +1,7 @@
 # Echo
 
+[![Checks](https://github.com/olamitisoji/AI-Deployment-Projects/actions/workflows/checks.yml/badge.svg)](https://github.com/olamitisoji/AI-Deployment-Projects/actions/workflows/checks.yml)
+
 **A WhatsApp-first research interviewer with a researcher workspace.**
 
 Research interviews need consistency without becoming rigid scripts. Echo lets a researcher define an objective, required information, and bounded follow-ups, then review the conversation and the evidence behind each decision. Participants answer through WhatsApp; researchers design and inspect studies in a separate dashboard.
@@ -43,9 +45,11 @@ The model supplies schema-validated analysis and evidence; application code cont
 
 ## Local quickstart
 
-Requires **Python 3.13+**, **Node.js 22.13+**, and a POSIX shell. After cloning, run from the Echo project directory: the repository root for a standalone export, or `echo-whatsapp/` if the repository groups multiple projects. No Supabase, Meta, or OpenAI account is required to inspect the dashboard, edit the seeded draft, or run the automated tests.
+Requires **Python 3.13+**, **Node.js 22.13+**, and a POSIX shell. Clone this repository and run from its root directory. No Supabase, Meta, or OpenAI account is required to inspect the dashboard, edit the seeded draft, or run the automated tests.
 
 ```sh
+git clone https://github.com/olamitisoji/AI-Deployment-Projects.git
+cd AI-Deployment-Projects
 python3 -m venv .venv
 .venv/bin/python -m pip install -r backend/requirements.lock
 .venv/bin/python scripts/configure_local.py
@@ -88,7 +92,7 @@ npm run typecheck
 npm run build
 ```
 
-Latest local verification: **132 backend tests and 10 dashboard gateway tests passed**. TypeScript validation passed, and a production build passed from an isolated source copy without private environment settings (using the already-installed dependencies). A [GitHub Actions workflow](.github/workflows/checks.yml) is prepared to run backend tests and dashboard tests/typecheck/build on pushes and pull requests; it has not yet executed on GitHub. The joined offline flow covers consent, audio/provider boundaries, follow-up decisions, replay suppression, controls, completion, export after restart, and withdrawal. Provider test doubles do not establish live WhatsApp or model quality. See the [verification record](docs/VERIFICATION.md) for the exact scope and remaining checks.
+Latest local verification: **132 backend tests and 10 dashboard gateway tests passed**. TypeScript validation passed, and a production build passed from an isolated source copy without private environment settings (using the already-installed dependencies). The [first GitHub Actions run](https://github.com/olamitisoji/AI-Deployment-Projects/actions/runs/42875028190) also passed both jobs: backend installation/tests and dashboard installation/tests/build/typecheck. The [workflow](.github/workflows/checks.yml) runs on pushes and pull requests without provider secrets. The joined offline flow covers consent, audio/provider boundaries, follow-up decisions, replay suppression, controls, completion, export after restart, and withdrawal. Provider test doubles do not establish live WhatsApp or model quality. See the [verification record](docs/VERIFICATION.md) for the exact scope and remaining checks.
 
 ## Read further
 
